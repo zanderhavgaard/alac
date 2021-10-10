@@ -205,6 +205,7 @@ arp-scan
 figlet
 htop
 neofetch
+onefetch
 nload
 zip
 unzip
@@ -370,7 +371,7 @@ fi
 aur="
 librewolf-bin
 antigen-git
-bonsai.sh-git
+cbonsai
 cava
 cli-visualizer
 figlet-fonts
