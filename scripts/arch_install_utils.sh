@@ -300,6 +300,7 @@ base-devel
 python
 python-pip
 pyenv
+poetry
 clang
 terraform
 kubectl
