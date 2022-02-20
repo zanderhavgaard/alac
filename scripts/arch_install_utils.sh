@@ -148,6 +148,8 @@ nextcloud-client
 libsecret
 gnome-keyring
 reflector
+asp
+devtools
 "
 read -p "Install misc system libs/utils/backends? [y/n] " -n 1 -r
 echo
