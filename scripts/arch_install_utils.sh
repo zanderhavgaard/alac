@@ -410,6 +410,7 @@ tfsec
 goneovim-bin
 luacheck
 dive
+jo
 "
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
 echo
