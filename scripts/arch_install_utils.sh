@@ -150,6 +150,8 @@ gnome-keyring
 reflector
 asp
 devtools
+pacman-contrib
+pacman-mirrors
 "
 read -p "Install misc system libs/utils/backends? [y/n] " -n 1 -r
 echo
