@@ -198,7 +198,7 @@ prettyping
 fzf
 fd
 ncdu
-tldr
+tealdeer
 the_silver_searcher
 ripgrep
 ranger
@@ -214,7 +214,6 @@ onefetch
 nload
 zip
 unzip
-tldr
 speedtest-cli
 lolcat
 cowsay
