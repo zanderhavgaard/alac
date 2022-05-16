@@ -151,7 +151,7 @@ reflector
 asp
 devtools
 pacman-contrib
-pacman-mirrors
+pacman-mirrorlist
 "
 read -p "Install misc system libs/utils/backends? [y/n] " -n 1 -r
 echo
@@ -378,7 +378,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 aur="
-librewolf-bin
 antigen-git
 cbonsai
 cava
@@ -396,7 +395,6 @@ zoom
 nerd-fonts-complete
 ly
 git-delta
-circleci-cli-bin
 glow
 ncspot
 duf
@@ -411,7 +409,6 @@ kind
 hadolint
 tflint
 tfsec
-goneovim-bin
 luacheck
 dive
 jo
