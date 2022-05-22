@@ -412,6 +412,7 @@ tfsec
 luacheck
 dive
 jo
+krew-bin
 "
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
 echo
