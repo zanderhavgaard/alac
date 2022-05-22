@@ -414,6 +414,7 @@ luacheck
 dive
 jo
 krew-bin
+lazydocker
 "
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
 echo
