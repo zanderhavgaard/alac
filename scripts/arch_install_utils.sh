@@ -340,6 +340,7 @@ noto-fonts
 ttf-bitstream-vera
 ttf-droid
 ttf-liberation
+ttf-dejavu
 "
 read -p "Install fonts? [y/n] " -n 1 -r
 echo
