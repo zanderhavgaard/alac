@@ -341,6 +341,10 @@ ttf-bitstream-vera
 ttf-droid
 ttf-liberation
 ttf-dejavu
+ttf-caladea 
+ttf-carlito 
+ttf-liberation
+ttf-opensans
 "
 read -p "Install fonts? [y/n] " -n 1 -r
 echo
