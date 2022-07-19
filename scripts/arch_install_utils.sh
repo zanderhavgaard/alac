@@ -427,6 +427,7 @@ lazydocker
 okteto
 logo-ls
 terraform-docs
+nitch
 "
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
 echo
