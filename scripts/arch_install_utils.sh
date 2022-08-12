@@ -430,6 +430,7 @@ logo-ls
 terraform-docs
 nitch
 catppuccin-gtk-theme
+tfswitch
 "
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
 echo
