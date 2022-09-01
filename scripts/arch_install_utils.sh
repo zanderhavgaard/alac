@@ -341,7 +341,6 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
-noto-fonts-compat
 gnu-free-fonts
 ttf-bitstream-vera
 ttf-droid
