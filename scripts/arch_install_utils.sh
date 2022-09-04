@@ -291,7 +291,6 @@ tumbler
 zathura
 zathura-pdf-poppler
 mpv
-mps-youtube
 graphicsmagick
 imagemagick
 flameshot
