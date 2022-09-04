@@ -79,6 +79,7 @@ awesome="
 awesome
 luarocks
 vicious
+lua-lgi
 "
 read -p "Install awesomewm packages? [y/n] " -n 1 -r
 echo
