@@ -401,13 +401,12 @@ pfetch-git
 polybar
 slack-desktop
 spotify
-tty-clock
+tty-clock-git
 zoom
 nerd-fonts-complete
 ly
 git-delta
 glow
-ncspot
 duf
 ctop
 lain-git
