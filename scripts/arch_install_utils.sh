@@ -430,6 +430,7 @@ terraform-docs
 nitch
 catppuccin-gtk-theme
 tfswitch
+luaformat
 "
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
 echo
