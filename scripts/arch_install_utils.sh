@@ -329,6 +329,7 @@ ansible
 ansible-lint
 shfmt
 prettier
+deno
 "
 read -p "Install development packags? [y/n] " -n 1 -r
 echo
