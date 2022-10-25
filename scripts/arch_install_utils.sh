@@ -429,7 +429,7 @@ okteto
 logo-ls
 terraform-docs
 nitch
-catppuccin-gtk-theme
+catppuccin-gtk-theme-frappe 
 tfswitch
 luaformat
 "
