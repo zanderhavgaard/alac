@@ -207,6 +207,7 @@ xplr
 ueberzug
 tmux
 jq
+yq
 nmap
 arp-scan
 figlet
