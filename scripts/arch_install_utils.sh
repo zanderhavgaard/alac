@@ -203,6 +203,7 @@ tealdeer
 the_silver_searcher
 ripgrep
 ranger
+xplr
 ueberzug
 tmux
 jq
