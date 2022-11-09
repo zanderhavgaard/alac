@@ -437,6 +437,7 @@ catppuccin-gtk-theme-frappe
 tfswitch
 luaformat
 aws-iam-authenticator
+snyk
 "
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
 echo
