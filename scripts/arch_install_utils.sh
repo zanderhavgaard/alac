@@ -438,6 +438,7 @@ tfswitch
 luaformat
 aws-iam-authenticator
 snyk
+k6
 "
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
 echo
