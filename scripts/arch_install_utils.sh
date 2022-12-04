@@ -435,7 +435,7 @@ terraform-docs
 nitch
 catppuccin-gtk-theme-frappe 
 tfswitch
-luaformat
+lua-format
 aws-iam-authenticator
 snyk
 k6
@@ -443,7 +443,7 @@ k6
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	paru -S $aur
+	paru --needed -S $aur
 fi
 
 read -p "Create directories for Applications/python venvs? [y/n] " -n 1 -r
