@@ -265,6 +265,7 @@ neovim-qt
 vim
 ctags
 xsel
+stylua
 "
 read -p "Install vim packages? [y/n] " -n 1 -r
 echo
@@ -435,7 +436,6 @@ terraform-docs
 nitch
 catppuccin-gtk-theme-frappe 
 tfswitch
-lua-format
 aws-iam-authenticator
 snyk
 k6
