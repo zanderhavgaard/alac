@@ -134,7 +134,6 @@ usbutils
 pavucontrol
 flameshot
 dunst
-i3lock
 cronie
 qt5ct
 gtk-engine-murrine
@@ -207,7 +206,6 @@ xplr
 ueberzug
 tmux
 jq
-yq
 nmap
 arp-scan
 figlet
@@ -266,6 +264,8 @@ vim
 ctags
 xsel
 stylua
+python-pynvim
+python-msgpack
 "
 read -p "Install vim packages? [y/n] " -n 1 -r
 echo
@@ -319,7 +319,6 @@ python-pip
 pyenv
 poetry
 clang
-terraform
 kubectl
 kubectx
 kustomize
@@ -335,6 +334,11 @@ ansible-lint
 shfmt
 prettier
 deno
+python-pylint
+flake8
+autopep8
+python-black
+python-jedi
 "
 read -p "Install development packags? [y/n] " -n 1 -r
 echo
@@ -439,6 +443,9 @@ tfswitch
 aws-iam-authenticator
 snyk
 k6
+yamlfix
+neovim-remote
+i3lock-color
 "
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
 echo
