@@ -422,6 +422,7 @@ ctop
 lain-git
 awesome-freedesktop-git
 neovim-git
+tree-sitter-git
 flashfocus-git
 caffeine-ng
 papirus-icon-theme-git
