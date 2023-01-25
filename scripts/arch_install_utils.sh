@@ -444,7 +444,6 @@ tfswitch
 aws-iam-authenticator
 snyk
 k6
-yamlfix
 neovim-remote
 i3lock-color
 "
