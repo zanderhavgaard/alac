@@ -360,6 +360,13 @@ ttf-caladea
 ttf-carlito 
 ttf-liberation
 ttf-opensans
+ttf-firacode-nerd
+ttf-hack-nerd
+ttf-mononoki-nerd
+ttf-iosevka-nerd
+ttf-ubuntu-nerd
+ttf-ubuntu-mono-nerd
+ttf-victor-mono-nerd
 "
 read -p "Install fonts? [y/n] " -n 1 -r
 echo
@@ -413,7 +420,6 @@ slack-desktop
 spotify
 tty-clock-git
 zoom
-nerd-fonts-complete
 ly
 git-delta
 glow
