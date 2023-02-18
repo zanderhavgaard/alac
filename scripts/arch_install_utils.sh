@@ -284,6 +284,7 @@ vimb
 thunderbird
 docker
 docker-compose
+docker-buildx
 python-pywal
 discord
 rofi
