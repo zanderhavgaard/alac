@@ -469,3 +469,17 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 	# Create Applications dir and clone some usefull stuff
 	mkdir ~/Applications
 fi
+
+hyprland="
+hyprland-git
+waybar-hyprland-git
+rofi-lbonn-wayland-git
+qt5-wayland
+qt6-wayland
+wofi
+"
+read -p "Install hyprland AUR packages using paru? [y/n] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+	paru --needed -S $hyprland
+fi
