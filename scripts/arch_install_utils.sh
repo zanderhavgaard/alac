@@ -453,6 +453,8 @@ snyk
 k6
 neovim-remote
 i3lock-color
+slides
+go-task
 "
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
 echo
