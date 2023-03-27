@@ -18,22 +18,22 @@ UNDERLINE='\033[4m'
 
 # for displaying progress
 function pmsg {
-  echo -e "${PURPLE}-->${NONE} ${BOLD}$1${NONE}"
+	echo -e "${PURPLE}-->${NONE} ${BOLD}$1${NONE}"
 }
 
 # for errers
 function errmsg {
- echo -e "${RED}${BOLD}--> $1${NONE}"
+	echo -e "${RED}${BOLD}--> $1${NONE}"
 }
 
 # general messages
 function msg {
-  echo -e "${BOLD}$1${NONE}"
+	echo -e "${BOLD}$1${NONE}"
 }
 
 # success message
 function smsg {
-echo -e "${BOLD}${GREEN}--> $1${NONE}"
+	echo -e "${BOLD}${GREEN}--> $1${NONE}"
 }
 
 # ====================================================================================
@@ -84,14 +84,14 @@ systemctl enable NetworkManager
 # Install ucode
 # ====================================================================================
 
-if [ "$CPU_VENDOR" = "intel" ] ; then
-  pmsg "Installing intel ucode ..."
-  pacman --noconfirm -S intel-ucode
-elif [ "$CPU_VENDOR" = "amd" ] ; then
-  pmsg "Installing amd ucode ..."
-  pacman --noconfirm -S amd-ucode
+if [ "$CPU_VENDOR" = "intel" ]; then
+	pmsg "Installing intel ucode ..."
+	pacman --noconfirm -S intel-ucode
+elif [ "$CPU_VENDOR" = "amd" ]; then
+	pmsg "Installing amd ucode ..."
+	pacman --noconfirm -S amd-ucode
 else
-  errmsg "Could not determine CPU vendor, skipping ucode installation."
+	errmsg "Could not determine CPU vendor, skipping ucode installation."
 fi
 
 # ====================================================================================
@@ -164,8 +164,9 @@ echo '/swapfile none swap sw 0 0' | tee -a /etc/fstab
 # ====================================================================================
 # Setup network time
 # ====================================================================================
-pmsg "Enabling network time ..."
-timedatectl set-ntp true
+# TODO: this bugs out b/c systemd is not started ...
+# pmsg "Enabling network time ..."
+# timedatectl set-ntp true
 
 # TODO make argument
 pmsg "Linking zoneinfo file to Copenhagen ..."
@@ -179,13 +180,13 @@ hwclock --systohc
 # ====================================================================================
 
 pmsg "Setting hostname ..."
-echo "$HOSTNAME" > /etc/hostname
+echo "$HOSTNAME" >/etc/hostname
 
 pmsg "Creating hosts file ..."
-rm /etc/hosts > /dev/null 2>&1
-echo "127.0.0.1 localhost" >> /etc/hosts
-echo "::1       localhost" >> /etc/hosts
-echo "127.0.1.1 $HOSTNAME.localdomain $HOSTNAME" >> /etc/hosts
+rm /etc/hosts >/dev/null 2>&1
+echo "127.0.0.1 localhost" >>/etc/hosts
+echo "::1       localhost" >>/etc/hosts
+echo "127.0.1.1 $HOSTNAME.localdomain $HOSTNAME" >>/etc/hosts
 
 # ====================================================================================
 # setup users
@@ -205,37 +206,37 @@ passwd "$USERNAME"
 
 pmsg "Allowing wheel group to use sude ..."
 # TODO experimental, verify that it works
-echo -e "%wheel ALL=(ALL) ALL\nDefaults rootpw" > /etc/sudoers.d/99_wheel
+echo -e "%wheel ALL=(ALL) ALL\nDefaults rootpw" >/etc/sudoers.d/99_wheel
 
 # ====================================================================================
 # install xorg, display manager and i3wm
 # ====================================================================================
 
-if [ "$INSTALL_GUI" = "yes" ] ; then
-  pmsg "Installing packages for graphical environment ..."
+if [ "$INSTALL_GUI" = "yes" ]; then
+	pmsg "Installing packages for graphical environment ..."
 
-  if [ "$GPU_VENDOR" = "intel" ] ; then
-    pmsg "Installing intel video drivers ..."
-    pacman --noconfirm -S xf86-video-intel libgl mesa
-  elif [ "$GPU_VENDOR" = "amd" ] ; then
-    pmsg "Installing amd video drivers ..."
-    pacman --noconfirm -S xf86-video-amdgpu mesa
-  else
-    errmsg "Could not determine GPU vendor, skipping driver installation ..."
-  fi
+	if [ "$GPU_VENDOR" = "intel" ]; then
+		pmsg "Installing intel video drivers ..."
+		pacman --noconfirm -S xf86-video-intel libgl mesa
+	elif [ "$GPU_VENDOR" = "amd" ]; then
+		pmsg "Installing amd video drivers ..."
+		pacman --noconfirm -S xf86-video-amdgpu mesa
+	else
+		errmsg "Could not determine GPU vendor, skipping driver installation ..."
+	fi
 
-  pmsg "Installing xorg ..."
-  pacman --noconfirm -S xorg xorg-server xorg-apps xorg-xinit xorg-xrandr arandr
+	pmsg "Installing xorg ..."
+	pacman --noconfirm -S xorg xorg-server xorg-apps xorg-xinit xorg-xrandr arandr
 
-  pmsg "Installing i3 window manager ..."
-  pacman --noconfirm -S i3-gaps i3lock i3status rxvt-unicode alacritty
+	pmsg "Installing i3 window manager ..."
+	pacman --noconfirm -S i3-gaps i3lock i3status rxvt-unicode alacritty
 
-  pmsg "Instlling audio alsa and pulseaudio ..."
-  pacman --noconfirm -S alsa-utils alsa-plugins alsa-lib pulseaudio pulseaudio-alsa
+	pmsg "Instlling audio alsa and pulseaudio ..."
+	pacman --noconfirm -S alsa-utils alsa-plugins alsa-lib pulseaudio pulseaudio-alsa
 
-  pmsg "Installing lightdm display manager ..."
-  pacman --noconfirm -S lightdm lightdm-gtk-greeter lightdm-webkit-theme-litarvan lightdm-webkit2-greeter
+	pmsg "Installing lightdm display manager ..."
+	pacman --noconfirm -S lightdm lightdm-gtk-greeter lightdm-webkit-theme-litarvan lightdm-webkit2-greeter
 
-  pmsg "Enabling lightdm ..."
-  systemctl enable lightdm
+	pmsg "Enabling lightdm ..."
+	systemctl enable lightdm
 fi
