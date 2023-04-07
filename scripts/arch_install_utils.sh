@@ -220,7 +220,6 @@ lolcat
 cowsay
 fortune-mod
 xclip
-autossh
 bashtop
 hub
 github-cli
@@ -230,7 +229,6 @@ bind
 moreutils
 nnn
 skim
-clusterssh
 glances
 picocom
 sysstat
