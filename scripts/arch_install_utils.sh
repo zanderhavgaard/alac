@@ -454,6 +454,7 @@ i3lock-color
 slides
 go-task
 kpt-bin
+pack-cli
 "
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
 echo
