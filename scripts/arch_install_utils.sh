@@ -322,6 +322,7 @@ kubectl
 kubectx
 kustomize
 helm
+kubeseal
 minikube
 nodejs
 npm
