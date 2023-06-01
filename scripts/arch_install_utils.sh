@@ -317,6 +317,7 @@ python
 python-pip
 pyenv
 poetry
+python-pipenv
 clang
 kubectl
 kubectx
