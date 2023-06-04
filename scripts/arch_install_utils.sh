@@ -223,7 +223,6 @@ xclip
 bashtop
 hub
 github-cli
-keynav
 calcurse
 bind
 moreutils
