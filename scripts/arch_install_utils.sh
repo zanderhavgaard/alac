@@ -110,6 +110,7 @@ gnome_shell="
 gnome-shell
 gnome-tweaks
 gnome-control-center
+gdm
 "
 read -p "Install gnome shell packages? [y/n] " -n 1 -r
 echo
