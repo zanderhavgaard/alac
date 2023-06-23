@@ -340,6 +340,7 @@ flake8
 autopep8
 python-black
 python-jedi
+eksctl
 "
 read -p "Install development packags? [y/n] " -n 1 -r
 echo
