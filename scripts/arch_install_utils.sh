@@ -408,7 +408,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 aur="
-antigen-git
+zplug
 cbonsai
 cava
 cli-visualizer
