@@ -459,7 +459,7 @@ go-task
 kpt-bin
 pack-cli
 nvm
-cdk8s
+argo-bin
 "
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
 echo
