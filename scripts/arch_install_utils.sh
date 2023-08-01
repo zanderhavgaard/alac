@@ -461,6 +461,7 @@ kpt-bin
 pack-cli
 nvm
 argo-bin
+kbt
 "
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
 echo
