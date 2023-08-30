@@ -153,6 +153,7 @@ asp
 devtools
 pacman-contrib
 pacman-mirrorlist
+fwupd
 "
 read -p "Install misc system libs/utils/backends? [y/n] " -n 1 -r
 echo
