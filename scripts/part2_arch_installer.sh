@@ -75,7 +75,7 @@ pmsg "Installing mainline and lts kernel + headers ..."
 pacman --noconfirm -S linux linux-lts linux-headers linux-lts-headers
 
 pmsg "Installing neccesary packages for the system, networking, ssh, a text editor ..."
-pacman --noconfirm -S vim neovim base-devel openssh networkmanager network-manager-applet wpa_supplicant wireless_tools netctl dialog lvm2 grub efibootmgr dosfstools os-prober mtools ufw linux-firmware
+pacman --noconfirm -S vim neovim git glibc base-devel openssh networkmanager network-manager-applet wpa_supplicant wireless_tools netctl dialog lvm2 grub efibootmgr dosfstools os-prober mtools ufw linux-firmware
 
 pmsg "Enabling NetworkManager ..."
 systemctl enable NetworkManager
@@ -205,7 +205,6 @@ pmsg "Enter password for user $USERNAME ..."
 passwd "$USERNAME"
 
 pmsg "Allowing wheel group to use sude ..."
-# TODO experimental, verify that it works
 echo -e "%wheel ALL=(ALL) ALL\nDefaults rootpw" >/etc/sudoers.d/99_wheel
 
 # ====================================================================================
@@ -217,7 +216,7 @@ if [ "$INSTALL_GUI" = "yes" ]; then
 
 	if [ "$GPU_VENDOR" = "intel" ]; then
 		pmsg "Installing intel video drivers ..."
-		pacman --noconfirm -S xf86-video-intel libgl mesa
+		pacman --noconfirm -S libgl mesa vulkan-intel
 	elif [ "$GPU_VENDOR" = "amd" ]; then
 		pmsg "Installing amd video drivers ..."
 		pacman --noconfirm -S xf86-video-amdgpu mesa
@@ -229,14 +228,14 @@ if [ "$INSTALL_GUI" = "yes" ]; then
 	pacman --noconfirm -S xorg xorg-server xorg-apps xorg-xinit xorg-xrandr arandr
 
 	pmsg "Installing i3 window manager ..."
-	pacman --noconfirm -S i3-gaps i3lock i3status rxvt-unicode alacritty
+	pacman --noconfirm -S i3-gaps i3lock i3status rxvt-unicode alacritty dmenu zsh
 
 	pmsg "Instlling audio alsa and pulseaudio ..."
 	pacman --noconfirm -S alsa-utils alsa-plugins alsa-lib pulseaudio pulseaudio-alsa
 
-	pmsg "Installing lightdm display manager ..."
-	pacman --noconfirm -S lightdm lightdm-gtk-greeter lightdm-webkit-theme-litarvan lightdm-webkit2-greeter
+	pmsg "Installing ly display manager ..."
+	pacman --noconfirm -S ly
 
-	pmsg "Enabling lightdm ..."
-	systemctl enable lightdm
+	pmsg "Enabling ly ..."
+	systemctl enable ly
 fi

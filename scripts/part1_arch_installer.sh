@@ -16,22 +16,22 @@ UNDERLINE='\033[4m'
 
 # for displaying progress
 function pmsg {
-  echo -e "${PURPLE}-->${NONE} ${BOLD}$1${NONE}"
+	echo -e "${PURPLE}-->${NONE} ${BOLD}$1${NONE}"
 }
 
 # for errers
 function errmsg {
- echo -e "${RED}${BOLD}--> $1${NONE}"
+	echo -e "${RED}${BOLD}--> $1${NONE}"
 }
 
 # general messages
 function msg {
-  echo -e "${BOLD}$1${NONE}"
+	echo -e "${BOLD}$1${NONE}"
 }
 
 # success message
 function smsg {
-echo -e "${BOLD}${GREEN}--> $1${NONE}"
+	echo -e "${BOLD}${GREEN}--> $1${NONE}"
 }
 
 # ====================================================================================
@@ -57,6 +57,12 @@ msg
 msg "This script will install arch linux."
 msg "The script will ask for a few variables at the beginning, otherwise the"
 msg "only interaction required will be to type the desired passwords when prompted."
+msg
+
+msg
+msg "NOTE! This script assumes that you have already formatted the disk."
+msg "If you have not, you should abort this script, and format the disk first"
+msg "See explanation in doc/install.md"
 msg
 
 # ====================================================================================
@@ -90,7 +96,8 @@ msg "install gui desktop: $INSTALL_GUI"
 msg
 
 msg "Continue? [y/n]"
-read -n 1 -r ; echo
+read -n 1 -r
+echo
 [[ $REPLY != "y" ]] && errmsg "aboring ..." && exit
 msg
 
@@ -98,13 +105,14 @@ msg
 # format disk
 # ====================================================================================
 
-pmsg "Creating disk partition template file ..."
-SFDISK_FILE="disk.sfdisk"
-echo "start=        2048, size=     1024000, type=1" >> $SFDISK_FILE
-echo "start=     1026048, size=     1024000, type=20" >> $SFDISK_FILE
-echo "start=     2050048, type=30" >> $SFDISK_FILE
-pmsg "Applying disk partioning using sfdisk ..."
-sfdisk "$INSTALL_DISK" < "$SFDISK_FILE"
+# TODO: fix
+# pmsg "Creating disk partition template file ..."
+# SFDISK_FILE="disk.sfdisk"
+# echo "start=        2048, size=     1024000, type=1" >> $SFDISK_FILE
+# echo "start=     1026048, size=     1024000, type=20" >> $SFDISK_FILE
+# echo "start=     2050048, type=30" >> $SFDISK_FILE
+# pmsg "Applying disk partioning using sfdisk ..."
+# sfdisk "$INSTALL_DISK" < "$SFDISK_FILE"
 
 # ====================================================================================
 # format partitions
@@ -168,7 +176,7 @@ mkdir /mnt/etc
 # ====================================================================================
 
 pmsg "Creating the fstab file ..."
-genfstab -U -p /mnt >> /mnt/etc/fstab
+genfstab -U -p /mnt >>/mnt/etc/fstab
 
 # pmsg "Catting generated fstab ..."
 # cat /mnt/etc/fstab
@@ -191,14 +199,14 @@ cp /root/part2_arch_installer.sh /mnt/part2_arch_installer.sh
 
 pmsg "Executing part2 script in new arch system ..."
 arch-chroot /mnt bash part2_arch_installer.sh \
-  "$USERNAME" \
-  "$HOSTNAME" \
-  "$INSTALL_DISK" \
-  "$INSTALL_DISK_PREFIX" \
-  "$ROOT_PART_SIZE" \
-  "$CPU_VENDOR" \
-  "$GPU_VENDOR" \
-  "$INSTALL_GUI"
+	"$USERNAME" \
+	"$HOSTNAME" \
+	"$INSTALL_DISK" \
+	"$INSTALL_DISK_PREFIX" \
+	"$ROOT_PART_SIZE" \
+	"$CPU_VENDOR" \
+	"$GPU_VENDOR" \
+	"$INSTALL_GUI"
 
 # ====================================================================================
 # end of the sub system shell
