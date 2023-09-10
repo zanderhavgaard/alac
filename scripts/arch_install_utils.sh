@@ -194,7 +194,7 @@ fi
 cli_tools="
 wget
 diff-so-fancy
-exa
+eza
 bat
 prettyping
 fzf
