@@ -251,6 +251,7 @@ starship
 gum
 dog
 zellij
+visidata
 "
 read -p "Install cli_tools? [y/n] " -n 1 -r
 echo
