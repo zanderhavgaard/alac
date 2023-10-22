@@ -374,6 +374,7 @@ ttf-iosevka-nerd
 ttf-ubuntu-nerd
 ttf-ubuntu-mono-nerd
 ttf-victor-mono-nerd
+ttf-ubuntu-font-family
 "
 read -p "Install fonts? [y/n] " -n 1 -r
 echo
