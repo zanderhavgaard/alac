@@ -346,6 +346,7 @@ autopep8
 python-black
 python-jedi
 eksctl
+gitui
 "
 read -p "Install development packags? [y/n] " -n 1 -r
 echo
