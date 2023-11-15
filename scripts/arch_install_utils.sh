@@ -347,6 +347,7 @@ python-black
 python-jedi
 eksctl
 gitui
+lazygit
 "
 read -p "Install development packags? [y/n] " -n 1 -r
 echo
@@ -421,7 +422,6 @@ cava
 cli-visualizer
 figlet-fonts
 gotop-bin
-lazygit
 magic-wormhole
 pfetch-git
 polybar
