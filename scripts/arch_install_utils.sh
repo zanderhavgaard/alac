@@ -348,6 +348,7 @@ python-jedi
 eksctl
 gitui
 lazygit
+cilium-cli
 "
 read -p "Install development packags? [y/n] " -n 1 -r
 echo
