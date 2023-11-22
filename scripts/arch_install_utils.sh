@@ -149,7 +149,6 @@ nextcloud-client
 libsecret
 gnome-keyring
 reflector
-asp
 devtools
 pacman-contrib
 pacman-mirrorlist
