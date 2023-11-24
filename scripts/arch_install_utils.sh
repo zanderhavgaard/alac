@@ -369,14 +369,8 @@ ttf-caladea
 ttf-carlito 
 ttf-liberation
 ttf-opensans
-ttf-firacode-nerd
-ttf-hack-nerd
-ttf-mononoki-nerd
-ttf-iosevka-nerd
-ttf-ubuntu-nerd
-ttf-ubuntu-mono-nerd
-ttf-victor-mono-nerd
 ttf-ubuntu-font-family
+nerd-fonts
 "
 read -p "Install fonts? [y/n] " -n 1 -r
 echo
