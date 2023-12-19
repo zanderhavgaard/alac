@@ -494,3 +494,17 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
 	paru --needed -S $hyprland
 fi
+
+riverwm="
+river
+qt5-wayland
+qt6-wayland
+wofi
+foot
+wlr-randr
+"
+read -p "Install riverwm and other wayland packages using paru? [y/n]" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+	paru --needed -S $riverwm
+fi
