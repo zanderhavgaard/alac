@@ -497,13 +497,15 @@ fi
 
 riverwm="
 river
+foot
 qt5-wayland
 qt6-wayland
-wofi
-foot
 wlr-randr
+wofi
 mako
 swaybg
+swaylock
+swayidle
 "
 read -p "Install riverwm and other wayland packages using paru? [y/n]" -n 1 -r
 echo
