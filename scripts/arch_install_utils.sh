@@ -502,6 +502,8 @@ qt6-wayland
 wofi
 foot
 wlr-randr
+mako
+swaybg
 "
 read -p "Install riverwm and other wayland packages using paru? [y/n]" -n 1 -r
 echo

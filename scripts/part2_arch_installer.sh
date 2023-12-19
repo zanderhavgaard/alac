@@ -199,7 +199,7 @@ pmsg "Creating new user ..."
 useradd -m -g users -G wheel "$USERNAME"
 
 pmsg "Adding new user to system groups ..."
-usermod -aG wheel,audio,video,optical,storage "$USERNAME"
+usermod -aG wheel,audio,video,optical,storage,input "$USERNAME"
 
 pmsg "Enter password for user $USERNAME ..."
 passwd "$USERNAME"
