@@ -43,8 +43,11 @@ audio="
 alsa-utils
 alsa-plugins
 alsa-lib
-pulseaudio
-pulseaudio-alsa
+pipewire
+pipewire-alsa
+pipewire-pulse
+pipewire-jack
+wireplumber
 "
 read -p "Install alsa and pulseaudio packages? [y/n] " -n 1 -r
 echo
