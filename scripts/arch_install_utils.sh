@@ -509,6 +509,8 @@ mako
 swaybg
 swaylock
 swayidle
+xdg-desktop-portal
+xdg-desktop-portal-wlr
 "
 read -p "Install riverwm and other wayland packages using paru? [y/n]" -n 1 -r
 echo
