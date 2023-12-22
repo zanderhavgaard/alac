@@ -512,6 +512,7 @@ swayidle
 xdg-desktop-portal
 xdg-desktop-portal-wlr
 riverwm-utils
+python-pywayland
 "
 read -p "Install riverwm and other wayland packages using paru? [y/n]" -n 1 -r
 echo
