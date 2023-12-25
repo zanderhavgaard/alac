@@ -516,6 +516,8 @@ python-pywayland
 grim
 slurp
 xdg-desktop-portal-gtk
+wl-clipboard
+swayshot
 "
 read -p "Install riverwm and other wayland packages using paru? [y/n]" -n 1 -r
 echo
