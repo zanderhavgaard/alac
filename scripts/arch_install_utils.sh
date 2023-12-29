@@ -500,6 +500,7 @@ fi
 
 riverwm="
 river
+waybar
 foot
 qt5-wayland
 qt6-wayland
