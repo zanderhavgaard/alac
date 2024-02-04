@@ -48,6 +48,7 @@ pipewire-alsa
 pipewire-pulse
 pipewire-jack
 wireplumber
+pamixer
 "
 read -p "Install alsa and pulseaudio packages? [y/n] " -n 1 -r
 echo
