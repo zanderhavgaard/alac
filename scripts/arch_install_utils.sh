@@ -462,7 +462,6 @@ i3lock-color
 slides
 go-task
 kpt-bin
-pack-cli
 nvm
 argo-bin
 kbt
