@@ -449,7 +449,6 @@ dive
 jo
 krew-bin
 lazydocker
-okteto
 logo-ls
 terraform-docs
 nitch
