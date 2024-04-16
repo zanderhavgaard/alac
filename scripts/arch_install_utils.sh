@@ -428,7 +428,6 @@ polybar
 slack-desktop
 spotify
 tty-clock-git
-zoom
 ly
 git-delta
 glow
