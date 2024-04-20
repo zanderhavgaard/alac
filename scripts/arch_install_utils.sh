@@ -264,6 +264,16 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 	sudo pacman --needed -S $cli_tools
 fi
 
+emacs_packages="
+emacs-nativecomp
+"
+
+read -p "Install emacs packages? [y/n] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+	sudo pacman --needed -S $emacs_packages
+fi
+
 vim_related="
 neovim
 neovim-qt
@@ -468,6 +478,7 @@ kbt
 go-yq
 drawio-desktop
 tofuenv
+dockfmt
 "
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
 echo
