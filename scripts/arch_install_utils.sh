@@ -207,7 +207,6 @@ tealdeer
 the_silver_searcher
 ripgrep
 ranger
-yazi
 xplr
 ueberzug
 tmux
@@ -258,6 +257,10 @@ zellij
 visidata
 dagger
 btop
+yazi
+ffmpegthumbnailer
+unarchiver
+poppler
 "
 read -p "Install cli_tools? [y/n] " -n 1 -r
 echo
