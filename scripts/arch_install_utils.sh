@@ -207,6 +207,7 @@ tealdeer
 the_silver_searcher
 ripgrep
 ranger
+yazi
 xplr
 ueberzug
 tmux
@@ -294,6 +295,7 @@ applications="
 zsh
 git
 alacritty
+wezterm
 firefox
 chromium
 qutebrowser
