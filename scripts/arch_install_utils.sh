@@ -533,6 +533,7 @@ slurp
 xdg-desktop-portal-gtk
 wl-clipboard
 wayshot
+lswt
 "
 read -p "Install riverwm and other wayland packages using paru? [y/n]" -n 1 -r
 echo
