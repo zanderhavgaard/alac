@@ -404,6 +404,7 @@ arc-gtk-theme
 arc-icon-theme
 capitaine-cursors
 materia-gtk-theme
+papirus-icon-theme
 "
 read -p "Install themes? [y/n] " -n 1 -r
 echo
@@ -454,7 +455,6 @@ neovim-git
 tree-sitter-git
 flashfocus-git
 caffeine-ng
-papirus-icon-theme-git
 kind
 hadolint
 tflint
