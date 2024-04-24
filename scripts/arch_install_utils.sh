@@ -502,9 +502,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 hyprland="
-hyprland-git
-waybar-hyprland-git
-rofi-lbonn-wayland-git
+hyprland
+waybar
 qt5-wayland
 qt6-wayland
 wofi
