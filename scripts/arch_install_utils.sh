@@ -438,7 +438,7 @@ cli-visualizer
 figlet-fonts
 gotop-bin
 magic-wormhole
-pfetch-git
+pfetch-rs
 polybar
 slack-desktop
 spotify
