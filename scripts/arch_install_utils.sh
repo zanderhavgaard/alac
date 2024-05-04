@@ -30,13 +30,23 @@ fi
 amd_cpu_gpu_specific="
 amd-ucode
 xf86-video-amdgpu
+mesa
 vulkan-radeon
-opencl-mesa
+libva-mesa-driver
 "
 read -p "Install packages for AMD CPU + GPU ? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
 	sudo pacman --needed -S $amd_cpu_gpu_specific
+fi
+
+intel_cpu_gpu_specific="
+intel-ucode
+"
+read -p "Install packages for Intel CPU + GPU ? [y/n] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+	sudo pacman --needed -S $intel_cpu_gpu_specific
 fi
 
 audio="
