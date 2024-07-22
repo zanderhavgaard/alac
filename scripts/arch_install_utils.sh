@@ -225,7 +225,7 @@ nmap
 arp-scan
 figlet
 htop
-neofetch
+fastfetch
 onefetch
 nload
 zip
