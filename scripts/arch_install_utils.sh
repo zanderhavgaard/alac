@@ -170,6 +170,7 @@ fwupd
 bolt
 brightnessctl
 handlr-regex
+cosign
 "
 read -p "Install misc system libs/utils/backends? [y/n] " -n 1 -r
 echo
