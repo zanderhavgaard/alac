@@ -16,22 +16,22 @@ UNDERLINE='\033[4m'
 
 # for displaying progress
 function pmsg {
-	echo -e "${PURPLE}-->${NONE} ${BOLD}$1${NONE}"
+  echo -e "${PURPLE}-->${NONE} ${BOLD}$1${NONE}"
 }
 
 # for errers
 function errmsg {
-	echo -e "${RED}${BOLD}--> $1${NONE}"
+  echo -e "${RED}${BOLD}--> $1${NONE}"
 }
 
 # general messages
 function msg {
-	echo -e "${BOLD}$1${NONE}"
+  echo -e "${BOLD}$1${NONE}"
 }
 
 # success message
 function smsg {
-	echo -e "${BOLD}${GREEN}--> $1${NONE}"
+  echo -e "${BOLD}${GREEN}--> $1${NONE}"
 }
 
 # ====================================================================================
@@ -199,14 +199,14 @@ cp /root/part2_arch_installer.sh /mnt/part2_arch_installer.sh
 
 pmsg "Executing part2 script in new arch system ..."
 arch-chroot /mnt bash part2_arch_installer.sh \
-	"$USERNAME" \
-	"$HOSTNAME" \
-	"$INSTALL_DISK" \
-	"$INSTALL_DISK_PREFIX" \
-	"$ROOT_PART_SIZE" \
-	"$CPU_VENDOR" \
-	"$GPU_VENDOR" \
-	"$INSTALL_GUI"
+  "$USERNAME" \
+  "$HOSTNAME" \
+  "$INSTALL_DISK" \
+  "$INSTALL_DISK_PREFIX" \
+  "$ROOT_PART_SIZE" \
+  "$CPU_VENDOR" \
+  "$GPU_VENDOR" \
+  "$INSTALL_GUI"
 
 # ====================================================================================
 # end of the sub system shell

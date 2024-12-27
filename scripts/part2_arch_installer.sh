@@ -18,22 +18,22 @@ UNDERLINE='\033[4m'
 
 # for displaying progress
 function pmsg {
-	echo -e "${PURPLE}-->${NONE} ${BOLD}$1${NONE}"
+  echo -e "${PURPLE}-->${NONE} ${BOLD}$1${NONE}"
 }
 
 # for errers
 function errmsg {
-	echo -e "${RED}${BOLD}--> $1${NONE}"
+  echo -e "${RED}${BOLD}--> $1${NONE}"
 }
 
 # general messages
 function msg {
-	echo -e "${BOLD}$1${NONE}"
+  echo -e "${BOLD}$1${NONE}"
 }
 
 # success message
 function smsg {
-	echo -e "${BOLD}${GREEN}--> $1${NONE}"
+  echo -e "${BOLD}${GREEN}--> $1${NONE}"
 }
 
 # ====================================================================================
@@ -85,13 +85,13 @@ systemctl enable NetworkManager
 # ====================================================================================
 
 if [ "$CPU_VENDOR" = "intel" ]; then
-	pmsg "Installing intel ucode ..."
-	pacman --noconfirm -S intel-ucode
+  pmsg "Installing intel ucode ..."
+  pacman --noconfirm -S intel-ucode
 elif [ "$CPU_VENDOR" = "amd" ]; then
-	pmsg "Installing amd ucode ..."
-	pacman --noconfirm -S amd-ucode
+  pmsg "Installing amd ucode ..."
+  pacman --noconfirm -S amd-ucode
 else
-	errmsg "Could not determine CPU vendor, skipping ucode installation."
+  errmsg "Could not determine CPU vendor, skipping ucode installation."
 fi
 
 # ====================================================================================
@@ -212,30 +212,30 @@ echo -e "%wheel ALL=(ALL) ALL\nDefaults rootpw" >/etc/sudoers.d/99_wheel
 # ====================================================================================
 
 if [ "$INSTALL_GUI" = "yes" ]; then
-	pmsg "Installing packages for graphical environment ..."
+  pmsg "Installing packages for graphical environment ..."
 
-	if [ "$GPU_VENDOR" = "intel" ]; then
-		pmsg "Installing intel video drivers ..."
-		pacman --noconfirm -S libgl mesa vulkan-intel
-	elif [ "$GPU_VENDOR" = "amd" ]; then
-		pmsg "Installing amd video drivers ..."
-		pacman --noconfirm -S xf86-video-amdgpu mesa
-	else
-		errmsg "Could not determine GPU vendor, skipping driver installation ..."
-	fi
+  if [ "$GPU_VENDOR" = "intel" ]; then
+    pmsg "Installing intel video drivers ..."
+    pacman --noconfirm -S libgl mesa vulkan-intel
+  elif [ "$GPU_VENDOR" = "amd" ]; then
+    pmsg "Installing amd video drivers ..."
+    pacman --noconfirm -S xf86-video-amdgpu mesa
+  else
+    errmsg "Could not determine GPU vendor, skipping driver installation ..."
+  fi
 
-	pmsg "Installing xorg ..."
-	pacman --noconfirm -S xorg xorg-server xorg-apps xorg-xinit xorg-xrandr arandr
+  pmsg "Installing xorg ..."
+  pacman --noconfirm -S xorg xorg-server xorg-apps xorg-xinit xorg-xrandr arandr
 
-	pmsg "Installing i3 window manager ..."
-	pacman --noconfirm -S i3-gaps i3lock i3status rxvt-unicode alacritty dmenu zsh
+  pmsg "Installing i3 window manager ..."
+  pacman --noconfirm -S i3-gaps i3lock i3status rxvt-unicode alacritty dmenu zsh
 
-	pmsg "Instlling audio alsa and pulseaudio ..."
-	pacman --noconfirm -S alsa-utils alsa-plugins alsa-lib pulseaudio pulseaudio-alsa
+  pmsg "Instlling audio alsa and pulseaudio ..."
+  pacman --noconfirm -S alsa-utils alsa-plugins alsa-lib pulseaudio pulseaudio-alsa
 
-	pmsg "Installing ly display manager ..."
-	pacman --noconfirm -S ly
+  pmsg "Installing ly display manager ..."
+  pacman --noconfirm -S ly
 
-	pmsg "Enabling ly ..."
-	systemctl enable ly
+  pmsg "Enabling ly ..."
+  systemctl enable ly
 fi

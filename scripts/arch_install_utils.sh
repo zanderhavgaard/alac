@@ -24,7 +24,7 @@ xorg-xrandr
 read -p "Install i3-wm and xorg? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sudo pacman --needed -S $xorg_windomanager
+  sudo pacman --needed -S $xorg_windomanager
 fi
 
 amd_cpu_gpu_specific="
@@ -37,7 +37,7 @@ libva-mesa-driver
 read -p "Install packages for AMD CPU + GPU ? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sudo pacman --needed -S $amd_cpu_gpu_specific
+  sudo pacman --needed -S $amd_cpu_gpu_specific
 fi
 
 intel_cpu_gpu_specific="
@@ -46,7 +46,7 @@ intel-ucode
 read -p "Install packages for Intel CPU + GPU ? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sudo pacman --needed -S $intel_cpu_gpu_specific
+  sudo pacman --needed -S $intel_cpu_gpu_specific
 fi
 
 audio="
@@ -63,7 +63,7 @@ pamixer
 read -p "Install alsa and pulseaudio packages? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sudo pacman --needed -S $audio
+  sudo pacman --needed -S $audio
 fi
 
 bluetooth="
@@ -76,7 +76,7 @@ libldac
 read -p "Install bluetooth packages? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sudo pacman --needed -S $bluetooth
+  sudo pacman --needed -S $bluetooth
 fi
 
 bspwn="
@@ -86,7 +86,7 @@ sxhkd
 read -p "Install bspwm packages? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sudo pacman --needed -S $bspwn
+  sudo pacman --needed -S $bspwn
 fi
 
 awesome="
@@ -98,7 +98,7 @@ lua-lgi
 read -p "Install awesomewm packages? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sudo pacman --needed -S $awesome
+  sudo pacman --needed -S $awesome
 fi
 
 qtile="
@@ -108,7 +108,7 @@ python-iwlib
 read -p "Install qtile packages? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sudo pacman --needed -S $qtile
+  sudo pacman --needed -S $qtile
 fi
 
 xfce="
@@ -117,7 +117,7 @@ xfce4
 read -p "Install xfce packages? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sudo pacman --needed -S $xfce
+  sudo pacman --needed -S $xfce
 fi
 
 gnome_shell="
@@ -129,7 +129,7 @@ gdm
 read -p "Install gnome shell packages? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sudo pacman --needed -S $gnome_shell
+  sudo pacman --needed -S $gnome_shell
 fi
 
 system_libs_utils_misc="
@@ -177,17 +177,17 @@ cosign
 read -p "Install misc system libs/utils/backends? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sudo pacman --needed -S $system_libs_utils_misc
+  sudo pacman --needed -S $system_libs_utils_misc
 fi
 
 read -p "Setup defaults for UFW? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	# setup ufw
-	sudo ufw default deny incoming
-	sudo ufw default allow outgoing
-	sudo ufw enable
-	sudo systemctl enable ufw
+  # setup ufw
+  sudo ufw default deny incoming
+  sudo ufw default allow outgoing
+  sudo ufw enable
+  sudo systemctl enable ufw
 fi
 
 virtualization="
@@ -205,9 +205,9 @@ dmidecode
 read -p "Install virtualization packages? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sudo pacman --needed -S $virtualization
-	sudo usermod -aG libvirt $USER
-	sudo systemctl enable libvirtd
+  sudo pacman --needed -S $virtualization
+  sudo usermod -aG libvirt $USER
+  sudo systemctl enable libvirtd
 fi
 
 cli_tools="
@@ -281,7 +281,7 @@ poppler
 read -p "Install cli_tools? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sudo pacman --needed -S $cli_tools
+  sudo pacman --needed -S $cli_tools
 fi
 
 emacs_packages="
@@ -291,7 +291,7 @@ emacs-nativecomp
 read -p "Install emacs packages? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sudo pacman --needed -S $emacs_packages
+  sudo pacman --needed -S $emacs_packages
 fi
 
 vim_related="
@@ -307,7 +307,7 @@ python-msgpack
 read -p "Install vim packages? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sudo pacman --needed -S $vim_related
+  sudo pacman --needed -S $vim_related
 fi
 
 applications="
@@ -348,9 +348,9 @@ bitwarden
 read -p "Install assorted applications, eg. browser/terminal/email? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sudo pacman --needed -S $applications
-	sudo usermod -aG docker $USER
-	sudo systemctl enable docker
+  sudo pacman --needed -S $applications
+  sudo usermod -aG docker $USER
+  sudo systemctl enable docker
 fi
 
 development="
@@ -391,7 +391,7 @@ postgresql-libs
 read -p "Install development packags? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sudo pacman --needed -S $development
+  sudo pacman --needed -S $development
 fi
 
 fonts="
@@ -414,7 +414,7 @@ nerd-fonts
 read -p "Install fonts? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sudo pacman --needed -S $fonts
+  sudo pacman --needed -S $fonts
 fi
 
 themes="
@@ -427,17 +427,17 @@ papirus-icon-theme
 read -p "Install themes? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sudo pacman --needed -S $themes
+  sudo pacman --needed -S $themes
 fi
 
 read -p "Install paru AUR-helper? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	mkdir -p ~/Applications
-	git clone https://aur.archlinux.org/paru.git ~/Applications/paru
-	cd ~/Applications/paru
-	makepkg -si
-	cd
+  mkdir -p ~/Applications
+  git clone https://aur.archlinux.org/paru.git ~/Applications/paru
+  cd ~/Applications/paru
+  makepkg -si
+  cd
 fi
 
 aur_bluetooth="
@@ -446,7 +446,7 @@ pulseaudio-modules-bt
 read -p "Install bluetooth-specific AUR packages using paru? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	paru -S $aur_bluetooth
+  paru -S $aur_bluetooth
 fi
 
 aur="
@@ -484,17 +484,17 @@ hyprlauncher
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	paru --needed -S $aur
+  paru --needed -S $aur
 fi
 
 read -p "Create directories for Applications/python venvs? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	# create dir for virtualenvs
-	mkdir ~/.virtualenvs
+  # create dir for virtualenvs
+  mkdir ~/.virtualenvs
 
-	# Create Applications dir and clone some usefull stuff
-	mkdir ~/Applications
+  # Create Applications dir and clone some usefull stuff
+  mkdir ~/Applications
 fi
 
 hyprland="
@@ -507,7 +507,7 @@ wofi
 read -p "Install hyprland AUR packages using paru? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	paru --needed -S $hyprland
+  paru --needed -S $hyprland
 fi
 
 riverwm="
@@ -537,5 +537,5 @@ wideriver
 read -p "Install riverwm and other wayland packages using paru? [y/n]" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	paru --needed -S $riverwm
+  paru --needed -S $riverwm
 fi
