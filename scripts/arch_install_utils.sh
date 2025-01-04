@@ -327,6 +327,7 @@ python-pywal
 discord
 rofi
 dmenu
+fuzzel
 feh
 picom
 thunar
@@ -479,7 +480,6 @@ drawio-desktop
 tenv
 tflint
 pspg
-hyprlauncher
 "
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
 echo
