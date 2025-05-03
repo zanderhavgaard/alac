@@ -145,7 +145,6 @@ ntp
 pandoc
 ufw
 w3m
-xautolock
 playerctl
 usbutils
 pavucontrol
@@ -212,6 +211,7 @@ fi
 
 cli_tools="
 wget
+lynx
 diff-so-fancy
 eza
 bat
@@ -277,6 +277,7 @@ yazi
 ffmpegthumbnailer
 unarchiver
 poppler
+grc
 "
 read -p "Install cli_tools? [y/n] " -n 1 -r
 echo
@@ -285,7 +286,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 emacs_packages="
-emacs-nativecomp
+emacs
 "
 
 read -p "Install emacs packages? [y/n] " -n 1 -r
@@ -312,6 +313,7 @@ fi
 
 applications="
 zsh
+fish
 git
 alacritty
 wezterm
@@ -419,8 +421,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 themes="
-arc-gtk-theme
-arc-icon-theme
 capitaine-cursors
 materia-gtk-theme
 papirus-icon-theme
@@ -480,6 +480,7 @@ drawio-desktop
 tenv
 tflint
 pspg
+arc-gtk-theme
 "
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
 echo
@@ -533,9 +534,21 @@ wl-clipboard
 wayshot
 lswt
 wideriver
+swww
 "
 read -p "Install riverwm and other wayland packages using paru? [y/n]" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   paru --needed -S $riverwm
+fi
+
+flatpak="
+flatpak
+xdg-desktop-portal-gtk
+"
+read -p "Setup flatpak and bottles? [y/n]" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  paru --needed -S $flatpak
+  flatpak install com.usebottles.bottles
 fi
