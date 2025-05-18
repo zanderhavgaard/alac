@@ -133,7 +133,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 system_libs_utils_misc="
-volumeicon
 network-manager-applet
 openvpn
 networkmanager-openvpn
@@ -152,14 +151,12 @@ flameshot
 dunst
 cronie
 qt5ct
+qt6ct
 gtk-engine-murrine
 gtk-engines
 net-tools
 lxappearance
-arandr
-wmctrl
 wireguard-tools
-trayer
 nextcloud-client
 libsecret
 gnome-keyring
@@ -278,6 +275,7 @@ ffmpegthumbnailer
 unarchiver
 poppler
 grc
+direnv
 "
 read -p "Install cli_tools? [y/n] " -n 1 -r
 echo
@@ -316,6 +314,7 @@ zsh
 fish
 git
 alacritty
+kitty
 wezterm
 firefox
 chromium
