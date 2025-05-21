@@ -295,13 +295,15 @@ fi
 
 vim_related="
 neovim
-neovim-qt
 vim
 ctags
 xsel
 stylua
 python-pynvim
 python-msgpack
+lua51
+luarocks
+tree-sitter-cli
 "
 read -p "Install vim packages? [y/n] " -n 1 -r
 echo
@@ -312,6 +314,7 @@ fi
 applications="
 zsh
 fish
+fisher
 git
 alacritty
 kitty
@@ -361,7 +364,7 @@ python
 python-pip
 pyenv
 poetry
-python-pipenv
+uv
 clang
 kubectl
 kubectx
@@ -389,6 +392,10 @@ gitui
 lazygit
 cilium-cli
 postgresql-libs
+rust
+rust-analyzer
+markdownlint-cli2
+sqlfluff
 "
 read -p "Install development packags? [y/n] " -n 1 -r
 echo
@@ -450,6 +457,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 aur="
+ast-grep
+nodejs-markdown-toc
+luajit-tiktoken-bin
 zplug
 cli-visualizer
 figlet-fonts
@@ -485,16 +495,6 @@ read -p "Install AUR packages using paru? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   paru --needed -S $aur
-fi
-
-read -p "Create directories for Applications/python venvs? [y/n] " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  # create dir for virtualenvs
-  mkdir ~/.virtualenvs
-
-  # Create Applications dir and clone some usefull stuff
-  mkdir ~/Applications
 fi
 
 hyprland="
