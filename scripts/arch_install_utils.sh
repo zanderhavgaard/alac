@@ -368,6 +368,7 @@ pwvucontrol
 arc-gtk-theme 
 sioyek
 tesseract-data-eng
+nvimpager
 "
 # TODO: use arc-gtk-theme-git ?
 
