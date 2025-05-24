@@ -2,34 +2,17 @@
 
 set -e
 
-echo -e "
-░█▀█░█▀▀░█░█░░░▀█▀░█▀█░█▀▀░▀█▀░█▀█░█░░░█░░
-░█░█░█▀▀░█▄█░░░░█░░█░█░▀▀█░░█░░█▀█░█░░░█░░
-░▀░▀░▀▀▀░▀░▀░░░▀▀▀░▀░▀░▀▀▀░░▀░░▀░▀░▀▀▀░▀▀▀
-"
-
-echo -e "\nInstall utils ...?\n"
-
-xorg_windomanager="
-i3-gaps
-lightdm
-lightdm-gtk-greeter
-lightdm-webkit-theme-litarvan
-mesa
-xorg-server
-xorg-apps
-xorg-xinit
-xorg-xrandr
-"
-read -p "Install i3-wm and xorg? [y/n] " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  sudo pacman --needed -S $xorg_windomanager
-fi
+cat <<'EOF'
+ ___           _        _ _   ____            _                         
+|_ _|_ __  ___| |_ __ _| | | |  _ \ __ _  ___| | ____ _  __ _  ___  ___ 
+ | || '_ \/ __| __/ _` | | | | |_) / _` |/ __| |/ / _` |/ _` |/ _ \/ __|
+ | || | | \__ \ || (_| | | | |  __/ (_| | (__|   < (_| | (_| |  __/\__ \
+|___|_| |_|___/\__\__,_|_|_| |_|   \__,_|\___|_|\_\__,_|\__, |\___||___/
+                                                        |___/           
+EOF
 
 amd_cpu_gpu_specific="
 amd-ucode
-xf86-video-amdgpu
 mesa
 vulkan-radeon
 libva-mesa-driver
@@ -41,6 +24,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 intel_cpu_gpu_specific="
+mesa
+vulkan-intel
 intel-ucode
 "
 read -p "Install packages for Intel CPU + GPU ? [y/n] " -n 1 -r
@@ -60,64 +45,10 @@ pipewire-jack
 wireplumber
 pamixer
 "
-read -p "Install alsa and pulseaudio packages? [y/n] " -n 1 -r
+read -p "Install audio packages? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   sudo pacman --needed -S $audio
-fi
-
-bluetooth="
-bluez
-bluez-utils
-blueman
-pulseaudio-bluetooth
-libldac
-"
-read -p "Install bluetooth packages? [y/n] " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  sudo pacman --needed -S $bluetooth
-fi
-
-bspwn="
-bspwm
-sxhkd
-"
-read -p "Install bspwm packages? [y/n] " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  sudo pacman --needed -S $bspwn
-fi
-
-awesome="
-awesome
-luarocks
-vicious
-lua-lgi
-"
-read -p "Install awesomewm packages? [y/n] " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  sudo pacman --needed -S $awesome
-fi
-
-qtile="
-qtile
-python-iwlib
-"
-read -p "Install qtile packages? [y/n] " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  sudo pacman --needed -S $qtile
-fi
-
-xfce="
-xfce4
-"
-read -p "Install xfce packages? [y/n] " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  sudo pacman --needed -S $xfce
 fi
 
 gnome_shell="
@@ -136,20 +67,15 @@ system_libs_utils_misc="
 network-manager-applet
 openvpn
 networkmanager-openvpn
-xwallpaper
 inetutils
 lvm2
 openssh
+openssl
 ntp
 pandoc
 ufw
-w3m
 playerctl
 usbutils
-pavucontrol
-flameshot
-dunst
-cronie
 qt5ct
 qt6ct
 gtk-engine-murrine
@@ -209,7 +135,7 @@ fi
 cli_tools="
 wget
 lynx
-diff-so-fancy
+w3m
 eza
 bat
 prettyping
@@ -220,62 +146,46 @@ tealdeer
 the_silver_searcher
 ripgrep
 ranger
-xplr
-ueberzug
-tmux
 jq
 nmap
 arp-scan
 figlet
 htop
 fastfetch
-onefetch
 nload
 zip
 unzip
-speedtest-cli
 lolcat
 cowsay
 fortune-mod
-xclip
-bashtop
 hub
 github-cli
-calcurse
 bind
 moreutils
-nnn
-skim
-glances
 picocom
 sysstat
-bpytop
 tree
 tokei
 pwgen
 duf
 zoxide
-bottom
-difftastic
 k9s
-duf
-dust
 procs
-argocd
 sad
-starship
 gum
 dog
-zellij
-visidata
 dagger
 btop
 yazi
 ffmpegthumbnailer
 unarchiver
-poppler
 grc
 direnv
+magic-wormhole
+git-delta
+glow
+go-task
+go-yq
 "
 read -p "Install cli_tools? [y/n] " -n 1 -r
 echo
@@ -297,7 +207,6 @@ vim_related="
 neovim
 vim
 ctags
-xsel
 stylua
 python-pynvim
 python-msgpack
@@ -312,43 +221,32 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 applications="
+git
+bash
 zsh
+starship
 fish
 fisher
-git
+zellij
 alacritty
 kitty
 wezterm
 firefox
 chromium
 qutebrowser
-vimb
 thunderbird
-docker
-docker-compose
-docker-buildx
-python-pywal
 discord
-rofi
-dmenu
 fuzzel
-feh
-picom
 thunar
-tumbler
-zathura
-zathura-pdf-poppler
 mpv
 yt-dlp
-graphicsmagick
 imagemagick
 flameshot
-sxiv
 gnome-disk-utility
 signal-desktop
-falkon
 guvcview
 bitwarden
+drawio-desktop
 "
 read -p "Install assorted applications, eg. browser/terminal/email? [y/n] " -n 1 -r
 echo
@@ -359,6 +257,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 development="
+docker
+docker-compose
+docker-buildx
 base-devel
 python
 python-pip
@@ -376,7 +277,6 @@ nodejs
 npm
 shellcheck
 yamllint
-python-cookiecutter
 ansible
 ansible-lint
 shfmt
@@ -386,9 +286,6 @@ python-pylint
 flake8
 autopep8
 python-black
-python-jedi
-eksctl
-gitui
 lazygit
 cilium-cli
 postgresql-libs
@@ -396,6 +293,8 @@ rust
 rust-analyzer
 markdownlint-cli2
 sqlfluff
+luacheck
+tflint
 "
 read -p "Install development packags? [y/n] " -n 1 -r
 echo
@@ -447,15 +346,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   cd
 fi
 
-aur_bluetooth="
-pulseaudio-modules-bt
-"
-read -p "Install bluetooth-specific AUR packages using paru? [y/n] " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  paru -S $aur_bluetooth
-fi
-
 aur="
 ast-grep
 nodejs-markdown-toc
@@ -463,34 +353,23 @@ luajit-tiktoken-bin
 zplug
 cli-visualizer
 figlet-fonts
-magic-wormhole
 pfetch-rs
-polybar
 slack-desktop
-spotify
 tty-clock-git
-git-delta
-glow
-duf
-lain-git
-awesome-freedesktop-git
 kind
 hadolint
-luacheck
-dive
-jo
 lazydocker
-catppuccin-gtk-theme-frappe 
 neovim-remote
 slides
-go-task
-go-yq
-drawio-desktop
 tenv
-tflint
 pspg
-arc-gtk-theme
+pwvucontrol
+arc-gtk-theme 
+sioyek
+tesseract-data-eng
 "
+# TODO: use arc-gtk-theme-git ?
+
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -502,7 +381,6 @@ hyprland
 waybar
 qt5-wayland
 qt6-wayland
-wofi
 "
 read -p "Install hyprland AUR packages using paru? [y/n] " -n 1 -r
 echo
@@ -517,7 +395,6 @@ foot
 qt5-wayland
 qt6-wayland
 wlr-randr
-wofi
 mako
 swaybg
 swaylock
@@ -528,7 +405,6 @@ riverwm-utils
 python-pywayland
 grim
 slurp
-xdg-desktop-portal-gtk
 wl-clipboard
 wayshot
 lswt
@@ -548,6 +424,6 @@ xdg-desktop-portal-gtk
 read -p "Setup flatpak and bottles? [y/n]" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-  paru --needed -S $flatpak
+  sudo pacman --needed -S $flatpak
   flatpak install com.usebottles.bottles
 fi
