@@ -427,3 +427,12 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   sudo pacman --needed -S $flatpak
   flatpak install com.usebottles.bottles
 fi
+
+read -p "Setup nix? [y/n]" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  sudo pacman --needed -S nix
+  sudo systemctl enable nix-daemon.service
+  sudo groupadd nix-users
+  sudo usermod -aG nix-users zander
+fi
