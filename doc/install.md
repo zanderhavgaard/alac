@@ -60,7 +60,7 @@ enter
 enter
 t
 enter
-30
+44
 ```
 
 Verify that pertitions look good with `p`
