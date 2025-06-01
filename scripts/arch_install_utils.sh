@@ -358,7 +358,7 @@ pfetch-rs
 slack-desktop
 tty-clock-git
 kind
-hadolint
+hadolint-bin
 lazydocker
 neovim-remote
 slides
