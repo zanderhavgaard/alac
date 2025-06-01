@@ -219,7 +219,7 @@ if [ "$INSTALL_GUI" = "yes" ]; then
     pacman --noconfirm -S libgl mesa vulkan-intel
   elif [ "$GPU_VENDOR" = "amd" ]; then
     pmsg "Installing amd video drivers ..."
-    pacman --noconfirm -S xf86-video-amdgpu mesa
+    pacman --noconfirm -S libgl mesa vulkan-radeon libva-mesa-driver
   else
     errmsg "Could not determine GPU vendor, skipping driver installation ..."
   fi
