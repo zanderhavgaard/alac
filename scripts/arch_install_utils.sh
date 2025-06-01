@@ -78,6 +78,8 @@ playerctl
 usbutils
 qt5ct
 qt6ct
+kvantum
+kvantum-qt5
 gtk-engine-murrine
 gtk-engines
 net-tools
@@ -366,6 +368,7 @@ tenv
 pspg
 pwvucontrol
 arc-gtk-theme 
+kvantum-theme-arc
 sioyek
 tesseract-data-eng
 nvimpager
