@@ -372,6 +372,7 @@ kvantum-theme-arc
 sioyek
 tesseract-data-eng
 nvimpager
+fooyin
 "
 # TODO: use arc-gtk-theme-git ?
 
