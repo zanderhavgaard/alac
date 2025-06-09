@@ -250,6 +250,7 @@ guvcview
 bitwarden
 drawio-desktop
 imv
+zed
 "
 read -p "Install assorted applications, eg. browser/terminal/email? [y/n] " -n 1 -r
 echo
@@ -298,6 +299,8 @@ markdownlint-cli2
 sqlfluff
 luacheck
 tflint
+pyright
+eslint
 "
 read -p "Install development packags? [y/n] " -n 1 -r
 echo
