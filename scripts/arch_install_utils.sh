@@ -237,6 +237,7 @@ firefox
 chromium
 qutebrowser
 thunderbird
+filezilla
 discord
 fuzzel
 thunar
