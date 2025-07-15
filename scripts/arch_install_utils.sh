@@ -292,7 +292,6 @@ flake8
 autopep8
 python-black
 lazygit
-cilium-cli
 postgresql-libs
 rust
 rust-analyzer
@@ -302,6 +301,8 @@ luacheck
 tflint
 pyright
 eslint
+talosctl
+cilium-cli
 "
 read -p "Install development packags? [y/n] " -n 1 -r
 echo
@@ -359,7 +360,6 @@ nodejs-markdown-toc
 luajit-tiktoken-bin
 zplug
 cli-visualizer
-figlet-fonts
 pfetch-rs
 slack-desktop
 tty-clock-git
