@@ -188,6 +188,7 @@ git-delta
 glow
 go-task
 go-yq
+7zip
 "
 read -p "Install cli_tools? [y/n] " -n 1 -r
 echo
@@ -377,6 +378,7 @@ sioyek
 tesseract-data-eng
 nvimpager
 fooyin
+wdisplays
 "
 # TODO: use arc-gtk-theme-git ?
 
