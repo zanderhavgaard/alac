@@ -63,6 +63,23 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   sudo pacman --needed -S $gnome_shell
 fi
 
+# see: https://wiki.archlinux.org/title/TLP
+tlp="
+tlp
+tlp-rdw
+ethtool
+smartmontools
+"
+read -p "Install and enable tlp to manage battery? [y/n] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  sudo pacman --needed -S $tlp
+  sudo systemctl enable tlp.service
+  sudo systemctl enable NetworkManager-dispatcher.service
+  sudo systemctl mask systemd-rfkill.service
+  sudo systemctl mask systemd-rfkill.socket
+fi
+
 system_libs_utils_misc="
 network-manager-applet
 openvpn
@@ -226,7 +243,9 @@ fi
 applications="
 git
 bash
+bash-completion
 zsh
+zsh-completions
 starship
 fish
 fisher
