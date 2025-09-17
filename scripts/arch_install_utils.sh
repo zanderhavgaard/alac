@@ -459,6 +459,20 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   flatpak install com.usebottles.bottles
 fi
 
+japanese_input="
+fcitx5-im
+fcitx5-mozc
+"
+read -p "Setup Japanese Input? [y/n]" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  sudo pacman --needed -S $japanese_input
+  echo "Enabling Japanese locale ..."
+  sudo sed '/#ja_JP.UTF-8/s/^#//g' -i /etc/locale.gen
+  echo "Generating locales ..."
+  sudo locale-gen
+fi
+
 read -p "Setup nix? [y/n]" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
