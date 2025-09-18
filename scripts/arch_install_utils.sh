@@ -233,6 +233,7 @@ python-msgpack
 lua51
 luarocks
 tree-sitter-cli
+tree-sitter-grammars
 "
 read -p "Install vim packages? [y/n] " -n 1 -r
 echo
