@@ -336,6 +336,22 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   sudo pacman --needed -S $development
 fi
 
+
+# you might also want makemkv aur package for blurays
+optical="
+cdparanoia
+flac
+whipper
+libdvdcss
+dvd+rw-tools
+lsscsi
+"
+read -p "Install tools for optical drives and ripping? [y/n] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  sudo pacman --needed -S $optical
+fi
+
 fonts="
 noto-fonts
 noto-fonts-cjk
