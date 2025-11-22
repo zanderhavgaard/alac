@@ -205,6 +205,7 @@ magic-wormhole
 git-delta
 glow
 go-task
+just
 go-yq
 7zip
 "
