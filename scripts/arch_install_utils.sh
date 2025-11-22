@@ -264,6 +264,7 @@ discord
 fuzzel
 thunar
 mpv
+vlc
 yt-dlp
 imagemagick
 flameshot
@@ -336,15 +337,17 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   sudo pacman --needed -S $development
 fi
 
-
 # you might also want makemkv aur package for blurays
 optical="
-cdparanoia
+lsscsi
 flac
 whipper
+cdparanoia
 libdvdcss
 dvd+rw-tools
-lsscsi
+handbrake
+libluray
+libaacs
 "
 read -p "Install tools for optical drives and ripping? [y/n] " -n 1 -r
 echo
