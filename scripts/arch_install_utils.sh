@@ -338,24 +338,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   sudo pacman --needed -S $development
 fi
 
-# you might also want makemkv aur package for blurays
-optical="
-lsscsi
-flac
-whipper
-cdparanoia
-libdvdcss
-dvd+rw-tools
-handbrake
-libluray
-libaacs
-"
-read -p "Install tools for optical drives and ripping? [y/n] " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  sudo pacman --needed -S $optical
-fi
-
 fonts="
 noto-fonts
 noto-fonts-cjk
@@ -506,4 +488,31 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   sudo systemctl enable nix-daemon.service
   sudo groupadd nix-users
   sudo usermod -aG nix-users zander
+fi
+
+# See: https://aur.archlinux.org/packages/makemkv?O=0
+# https://cable.ayra.ch/makemkv/
+# https://forum.makemkv.com/forum/viewtopic.php?t=39368
+optical="
+lsscsi
+flac
+whipper
+cdparanoia
+libdvdcss
+dvd+rw-tools
+handbrake
+vlc
+vlc-plugins-all
+kodi
+jre8-openjdk
+libbluray
+libdvdnav
+aribb24
+makemkv
+makemkv-libaacs
+"
+read -p "Install tools for optical drives and ripping using paru? [y/n] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  paru --needed -S $optical
 fi
