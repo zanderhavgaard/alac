@@ -236,6 +236,9 @@ if [ "$INSTALL_GUI" = "yes" ]; then
   pmsg "Installing ly display manager ..."
   pacman --noconfirm -S ly
 
-  pmsg "Enabling ly ..."
-  systemctl enable ly
+  # see: https://wiki.archlinux.org/title/Ly
+  pmsg "Disabling getty@tty2 ..."
+  systemctl disable getty@tty2.service
+  pmsg "Enabling ly@tty2 ..."
+  systemctl enable ly@tty2.service
 fi
