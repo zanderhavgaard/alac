@@ -310,8 +310,6 @@ nodejs
 npm
 shellcheck
 yamllint
-ansible
-ansible-lint
 shfmt
 prettier
 deno
