@@ -97,8 +97,6 @@ qt5ct
 qt6ct
 kvantum
 kvantum-qt5
-gtk-engine-murrine
-gtk-engines
 net-tools
 lxappearance
 wireguard-tools
