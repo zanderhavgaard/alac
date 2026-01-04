@@ -98,6 +98,9 @@ fi
 # setup mkinitcpio
 # ====================================================================================
 
+pmsg "Populate /etc/vconsole.conf ..."
+echo "KEYMAP=us" >/etc/vconsole.conf
+
 pmsg "Editing kernel modules ..."
 sed 's/block/& encrypt lvm2/' -i /etc/mkinitcpio.conf
 
