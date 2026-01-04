@@ -97,18 +97,14 @@ fi
 # ====================================================================================
 # setup mkinitcpio
 # ====================================================================================
-
 pmsg "Populate /etc/vconsole.conf ..."
 echo "KEYMAP=us" >/etc/vconsole.conf
 
-pmsg "Editing kernel modules ..."
-sed 's/block/& encrypt lvm2/' -i /etc/mkinitcpio.conf
+pmsg "Configuring mkinitcpio hooks for systemd-based initramfs ..."
+sed -i 's/^HOOKS=.*/HOOKS=(base systemd autodetect microcode modconf kms keyboard sd-vconsole block sd-encrypt lvm2 filesystems fsck)/' /etc/mkinitcpio.conf
 
-pmsg "Creating initial ramdisk for mainline kernel ..."
-mkinitcpio -p linux
-
-pmsg "Creating initial ramdisk for lts kernel"
-mkinitcpio -p linux-lts
+pmsg "Creating initial ramdisk for kernels ..."
+mkinitcpio -P
 
 # ====================================================================================
 # generate locale
@@ -124,9 +120,16 @@ locale-gen
 # ====================================================================================
 # setup grub
 # ====================================================================================
+pmsg "Getting UUID of LUKS partition ..."
+LUKS_UUID=$(blkid -s UUID -o value "${INSTALL_DISK_PREFIX}3")
+
+pmsg "LUKS UUID: $LUKS_UUID"
+
 pmsg "Enabling disk encryption in grub config ..."
-sed '/#GRUB_ENABLE_CRYPTODISK=y/s/^#//g' -i /etc/default/grub
-sed 's,GRUB_CMDLINE_LINUX_DEFAULT=",&cryptdevice='"${INSTALL_DISK_PREFIX}"'3:volgroup0:allow-discards ,' -i /etc/default/grub
+sed -i '/#GRUB_ENABLE_CRYPTODISK=y/s/^#//g' /etc/default/grub
+
+pmsg "Configuring GRUB for sd-encrypt ..."
+sed -i "s,GRUB_CMDLINE_LINUX_DEFAULT=\",&rd.luks.name=${LUKS_UUID}=lvm rd.luks.options=discard,password-echo=no ," /etc/default/grub
 
 # ====================================================================================
 # setup EFI + grub
