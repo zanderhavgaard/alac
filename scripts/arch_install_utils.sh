@@ -283,8 +283,6 @@ read -p "Install assorted applications, eg. browser/terminal/email? [y/n] " -n 1
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   sudo pacman --needed -S $applications
-  sudo usermod -aG docker $USER
-  sudo systemctl enable docker
 fi
 
 development="
@@ -332,6 +330,8 @@ read -p "Install development packags? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   sudo pacman --needed -S $development
+  sudo usermod -aG docker $USER
+  sudo systemctl enable docker
 fi
 
 fonts="
