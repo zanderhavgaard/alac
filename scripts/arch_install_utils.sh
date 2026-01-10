@@ -195,6 +195,7 @@ dog
 dagger
 btop
 yazi
+poppler
 ffmpegthumbnailer
 unarchiver
 grc
