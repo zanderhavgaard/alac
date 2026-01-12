@@ -286,6 +286,17 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   sudo pacman --needed -S $applications
 fi
 
+android_file_transfer="
+gvfs-mtp
+libmtp
+android-file-transfer
+"
+read -p "Install packags for transferring files to Android? [y/n] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  sudo pacman --needed -S $android_file_transfer
+fi
+
 development="
 docker
 docker-compose
