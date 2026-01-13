@@ -373,6 +373,8 @@ themes="
 capitaine-cursors
 materia-gtk-theme
 papirus-icon-theme
+breeze-icons
+adwaita-icon-theme
 "
 read -p "Install themes? [y/n] " -n 1 -r
 echo
@@ -391,31 +393,29 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 aur="
-ast-grep
 nodejs-markdown-toc
 luajit-tiktoken-bin
 zplug
 cli-visualizer
 pfetch-rs
 slack-desktop
-tty-clock-git
 kind
 hadolint-bin
 lazydocker
 neovim-remote
-slides
 tenv
 pspg
 pwvucontrol
-arc-gtk-theme 
-kvantum-theme-arc
 sioyek
-tesseract-data-eng
 nvimpager
 fooyin
 wdisplays
+arc-gtk-theme 
+kvantum-theme-arc
+catppuccin-gtk-theme-mocha
+catppuccin-cursors-mocha
+kvantum-theme-catppuccin-git
 "
-# TODO: use arc-gtk-theme-git ?
 
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
 echo
