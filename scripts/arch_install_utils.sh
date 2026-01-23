@@ -464,6 +464,17 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   paru --needed -S $riverwm
 fi
 
+niri="
+niri
+xwayland-satellite
+xdg-desktop-portal-gnome
+"
+read -p "Install niri and other wayland packages using paru? [y/n]" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  paru --needed -S $niri
+fi
+
 flatpak="
 flatpak
 xdg-desktop-portal-gtk
