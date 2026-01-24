@@ -207,6 +207,8 @@ go-task
 just
 go-yq
 7zip
+dust
+broot
 "
 read -p "Install cli_tools? [y/n] " -n 1 -r
 echo
@@ -408,6 +410,7 @@ pspg
 pwvucontrol
 sioyek
 nvimpager
+doggo-bin
 fooyin
 wdisplays
 arc-gtk-theme 
