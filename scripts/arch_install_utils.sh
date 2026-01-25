@@ -81,6 +81,10 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 system_libs_utils_misc="
+libinput
+libinput-tools
+wev
+keyd
 network-manager-applet
 openvpn
 networkmanager-openvpn
