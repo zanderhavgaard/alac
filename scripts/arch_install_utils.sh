@@ -418,7 +418,6 @@ doggo-bin
 fooyin
 wdisplays
 arc-gtk-theme 
-kvantum-theme-arc
 catppuccin-gtk-theme-mocha
 catppuccin-cursors-mocha
 kvantum-theme-catppuccin-git
