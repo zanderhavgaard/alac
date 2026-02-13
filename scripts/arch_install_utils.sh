@@ -260,6 +260,7 @@ fisher
 zellij
 alacritty
 kitty
+ghostty
 wezterm
 firefox
 chromium
