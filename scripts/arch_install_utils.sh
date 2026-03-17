@@ -167,6 +167,7 @@ ncdu
 tealdeer
 the_silver_searcher
 ripgrep
+ast-grep
 ranger
 jq
 nmap
