@@ -464,7 +464,7 @@ wl-clipboard
 wayshot
 lswt
 wideriver
-swww
+awww
 "
 read -p "Install riverwm and other wayland packages using paru? [y/n]" -n 1 -r
 echo
