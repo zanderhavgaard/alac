@@ -44,6 +44,7 @@ pipewire-pulse
 pipewire-jack
 wireplumber
 pamixer
+pavucontrol
 "
 read -p "Install audio packages? [y/n] " -n 1 -r
 echo
@@ -117,6 +118,10 @@ brightnessctl
 handlr-regex
 cosign
 kanshi
+wdisplays
+nwg-look
+zathura
+zathura-pdf-mupdf
 "
 read -p "Install misc system libs/utils/backends? [y/n] " -n 1 -r
 echo
@@ -155,6 +160,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 cli_tools="
+less
 wget
 lynx
 w3m
@@ -214,6 +220,7 @@ go-yq
 7zip
 dust
 broot
+doggo
 "
 read -p "Install cli_tools? [y/n] " -n 1 -r
 echo
@@ -309,6 +316,7 @@ development="
 docker
 docker-compose
 docker-buildx
+lazydocker
 base-devel
 python
 python-pip
@@ -403,22 +411,15 @@ fi
 aur="
 nodejs-markdown-toc
 luajit-tiktoken-bin
-zplug
 cli-visualizer
 pfetch-rs
 slack-desktop
 kind
 hadolint-bin
-lazydocker
-neovim-remote
 tenv
 pspg
-pwvucontrol
-sioyek
-nvimpager
-doggo-bin
 fooyin
-wdisplays
+pwvucontrol
 arc-gtk-theme 
 catppuccin-gtk-theme-mocha
 catppuccin-cursors-mocha
