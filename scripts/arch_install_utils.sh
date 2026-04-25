@@ -353,6 +353,7 @@ pyright
 eslint
 talosctl
 cilium-cli
+mise
 "
 read -p "Install development packags? [y/n] " -n 1 -r
 echo
