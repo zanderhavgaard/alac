@@ -425,6 +425,7 @@ arc-gtk-theme
 catppuccin-gtk-theme-mocha
 catppuccin-cursors-mocha
 kvantum-theme-catppuccin-git
+claude-code
 "
 
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
