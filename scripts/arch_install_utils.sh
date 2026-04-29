@@ -418,7 +418,6 @@ pfetch-rs
 slack-desktop
 kind
 hadolint-bin
-tenv
 pspg
 fooyin
 pwvucontrol
