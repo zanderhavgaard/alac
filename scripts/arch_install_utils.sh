@@ -169,7 +169,7 @@ bat
 prettyping
 fzf
 fd
-ncdu
+gdu
 tealdeer
 the_silver_searcher
 ripgrep
