@@ -205,6 +205,7 @@ gum
 dog
 dagger
 btop
+bottom
 yazi
 poppler
 ffmpegthumbnailer
