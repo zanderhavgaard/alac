@@ -412,6 +412,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 aur="
+cbonsai
 nodejs-markdown-toc
 luajit-tiktoken-bin
 cli-visualizer
