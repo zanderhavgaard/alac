@@ -122,6 +122,7 @@ wdisplays
 nwg-look
 zathura
 zathura-pdf-mupdf
+fooyin
 "
 read -p "Install misc system libs/utils/backends? [y/n] " -n 1 -r
 echo
@@ -421,7 +422,6 @@ slack-desktop
 kind
 hadolint-bin
 pspg
-fooyin
 pwvucontrol
 arc-gtk-theme 
 catppuccin-gtk-theme-mocha
