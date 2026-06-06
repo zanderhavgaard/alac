@@ -536,7 +536,7 @@ handbrake
 vlc
 vlc-plugins-all
 kodi
-jre8-openjdk
+jre17-openjdk
 libbluray
 libdvdnav
 aribb24
