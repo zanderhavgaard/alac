@@ -293,6 +293,7 @@ drawio-desktop
 imv
 zed
 element-desktop
+mullvad-vpn
 "
 # you might need to run element-desktop from cli with this argument to get it
 # to play nice with gnome-keyring, should only need to do it once.
@@ -428,6 +429,7 @@ catppuccin-gtk-theme-mocha
 catppuccin-cursors-mocha
 kvantum-theme-catppuccin-git
 claude-code
+mullvad-browser-bin
 "
 
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
