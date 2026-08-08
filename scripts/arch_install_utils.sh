@@ -495,11 +495,22 @@ flatpak="
 flatpak
 xdg-desktop-portal-gtk
 "
-read -p "Setup flatpak and bottles? [y/n]" -n 1 -r
+read -p "Setup flatpak? [y/n]" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   sudo pacman --needed -S $flatpak
+fi
+
+read -p "Install bottles via flatpak? [y/n]" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
   flatpak install com.usebottles.bottles
+fi
+
+read -p "Install melodeon via flatpak? [y/n]" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  flatpak install io.github.cdrummond.melodeon
 fi
 
 japanese_input="
