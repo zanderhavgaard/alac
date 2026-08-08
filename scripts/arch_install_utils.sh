@@ -430,6 +430,7 @@ catppuccin-cursors-mocha
 kvantum-theme-catppuccin-git
 claude-code
 mullvad-browser-bin
+supersonic-desktop
 "
 
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
