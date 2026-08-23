@@ -563,3 +563,16 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   paru --needed -S $optical
 fi
+
+music_library="
+picard
+beets
+python-pylast
+python-pyacoustid
+chromaprint
+"
+read -p "Install tools for managing audio library metadata using paru? [y/n] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  paru --needed -S $music_library
+fi
