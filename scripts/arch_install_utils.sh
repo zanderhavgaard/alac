@@ -569,6 +569,7 @@ picard
 beets
 python-pylast
 python-pyacoustid
+python-discogs-client
 chromaprint
 "
 read -p "Install tools for managing audio library metadata using paru? [y/n] " -n 1 -r
