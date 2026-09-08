@@ -288,7 +288,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 helix_editor_aur="
-helm-ls
+helm-ls-bin
 tofu-ls-bin
 golangci-lint-langserver-bin
 vscode-langservers-extracted
