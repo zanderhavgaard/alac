@@ -3,12 +3,12 @@
 set -e
 
 cat <<'EOF'
- ___           _        _ _   ____            _                         
-|_ _|_ __  ___| |_ __ _| | | |  _ \ __ _  ___| | ____ _  __ _  ___  ___ 
+ ___           _        _ _   ____            _
+|_ _|_ __  ___| |_ __ _| | | |  _ \ __ _  ___| | ____ _  __ _  ___  ___
  | || '_ \/ __| __/ _` | | | | |_) / _` |/ __| |/ / _` |/ _` |/ _ \/ __|
  | || | | \__ \ || (_| | | | |  __/ (_| | (__|   < (_| | (_| |  __/\__ \
 |___|_| |_|___/\__\__,_|_|_| |_|   \__,_|\___|_|\_\__,_|\__, |\___||___/
-                                                        |___/           
+                                                        |___/
 EOF
 
 amd_cpu_gpu_specific="
@@ -273,6 +273,12 @@ shfmt
 prettier
 yamllint
 tflint
+ty
+dockerfile-language-server
+just-lsp
+yamlfmt
+markdown-oxide
+kdlfmt
 "
 
 read -p "Install helix and language servers? [y/n] " -n 1 -r
@@ -283,9 +289,9 @@ fi
 
 helix_editor_aur="
 helm-ls
-tofu-ls
+tofu-ls-bin
+golangci-lint-langserver-bin
 vscode-langservers-extracted
-kcl
 "
 
 read -p "Install helix AUR language servers using paru? [y/n] " -n 1 -r
@@ -414,8 +420,8 @@ ttf-bitstream-vera
 ttf-droid
 ttf-liberation
 ttf-dejavu
-ttf-caladea 
-ttf-carlito 
+ttf-caladea
+ttf-carlito
 ttf-liberation
 ttf-opensans
 ttf-ubuntu-font-family
@@ -461,7 +467,7 @@ kind
 hadolint-bin
 pspg
 pwvucontrol
-arc-gtk-theme 
+arc-gtk-theme
 catppuccin-gtk-theme-mocha
 catppuccin-cursors-mocha
 kvantum-theme-catppuccin-git
