@@ -258,6 +258,42 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   sudo pacman --needed -S $vim_related
 fi
 
+helix_editor="
+helix
+ruff
+gopls
+delve
+marksman
+taplo-cli
+bash-language-server
+yaml-language-server
+pyright
+shellcheck
+shfmt
+prettier
+yamllint
+tflint
+"
+
+read -p "Install helix and language servers? [y/n] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  sudo pacman --needed -S $helix_editor
+fi
+
+helix_editor_aur="
+helm-ls
+tofu-ls
+vscode-langservers-extracted
+kcl
+"
+
+read -p "Install helix AUR language servers using paru? [y/n] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  paru --needed -S $helix_editor_aur
+fi
+
 applications="
 git
 bash
