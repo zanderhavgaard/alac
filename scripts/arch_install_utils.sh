@@ -123,6 +123,7 @@ nwg-look
 zathura
 zathura-pdf-mupdf
 fooyin
+zbar
 "
 read -p "Install misc system libs/utils/backends? [y/n] " -n 1 -r
 echo
