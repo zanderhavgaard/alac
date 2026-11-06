@@ -536,6 +536,7 @@ niri="
 niri
 xwayland-satellite
 xdg-desktop-portal-gnome
+quickshell
 "
 read -p "Install niri and other wayland packages using paru? [y/n]" -n 1 -r
 echo
