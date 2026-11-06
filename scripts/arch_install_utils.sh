@@ -483,6 +483,7 @@ colloid-icon-theme-git
 colloid-cursors-git
 plasma6-themes-colloid-git
 music-assistant-desktop
+ttf-shippori-mincho
 "
 
 read -p "Install AUR packages using paru? [y/n] " -n 1 -r
