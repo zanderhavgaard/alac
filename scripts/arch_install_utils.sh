@@ -441,6 +441,7 @@ materia-gtk-theme
 papirus-icon-theme
 breeze-icons
 adwaita-icon-theme
+adw-gtk-theme
 "
 read -p "Install themes? [y/n] " -n 1 -r
 echo
